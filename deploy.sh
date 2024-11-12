@@ -59,6 +59,10 @@ SVN_URL="https://plugins.svn.wordpress.org/${SLUG}/"
 SVN_DIR="${HOME}/svn-${SLUG}"
 
 # Checkout SVN repository.
+echo "➤ Installing SVN..."
+apt-get update && apt-get install -y subversion
+
+# Checkout SVN repository.
 echo "➤ Checking out .org repository..."
 svn checkout --depth immediates "$SVN_URL" "$SVN_DIR"
 cd "$SVN_DIR"
